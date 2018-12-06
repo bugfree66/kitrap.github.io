@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="游箫笔谈">
 <meta property="og:description" content="docker里往容器里挂载文件/文件夹有两种方法:  -v source:dest:ro这种方法既可以指定volume,也可以通过绝对路径指定宿主机的文件/文件夹 –mount type=bind/volume/tmpfs,source=…,target=…,readonly type=bind将Host的文件/文件夹挂载到容器,指定的路径在Host上必须存在,否则会报错误. type=volum">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-06T12:15:31.962Z">
+<meta property="og:updated_time" content="2018-12-06T12:26:02.672Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker -v和mount区别">
 <meta name="twitter:description" content="docker里往容器里挂载文件/文件夹有两种方法:  -v source:dest:ro这种方法既可以指定volume,也可以通过绝对路径指定宿主机的文件/文件夹 –mount type=bind/volume/tmpfs,source=…,target=…,readonly type=bind将Host的文件/文件夹挂载到容器,指定的路径在Host上必须存在,否则会报错误. type=volum">
@@ -331,7 +331,7 @@
 
       
         <p>docker里往容器里挂载文件/文件夹有两种方法:</p>
-<ul>
+<ol>
 <li>-v source:dest:ro<br>这种方法既可以指定volume,也可以通过绝对路径指定宿主机的文件/文件夹</li>
 <li>–mount type=bind/volume/tmpfs,source=…,target=…,readonly<ul>
 <li>type=bind<br>将Host的文件/文件夹挂载到容器,指定的路径在Host上必须存在,否则会报错误.</li>
@@ -339,7 +339,7 @@
 </li>
 </ul>
 </li>
-</ul>
+</ol>
 <p>两种方式的最大区别是:<br>-v/–volume会<strong>自动</strong>判断source的是卷还是本地文件/文件夹,然后采取相应的方式挂载.<br>另外需要注意的是:如果使用-v指定的路径不存在的话,会自动创建该路径,容器里的dest会复制到本地路径.<br>这位大神讲的一语道破真谛: <a href="https://github.com/moby/moby/issues/34532#issuecomment-322738970" target="_blank" rel="noopener">https://github.com/moby/moby/issues/34532#issuecomment-322738970</a></p>
 
       
@@ -485,10 +485,10 @@
               
               
               <div class="site-state-item site-state-tags">
-                
+                <a href="/tags/index.html">
                   <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">标签</span>
-                
+                </a>
               </div>
             
 
