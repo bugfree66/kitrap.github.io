@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="k8s," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="虚拟化技术dockerkubernetes架构概念Deploymentdeployment用来创建管理pod,继承rc的全部特性的同时,增加了回滚等新功能,可以看作是rc的升级版.  pod高可用deployment可以创建多个pod,并对pod进行健康检查,如果pod挂掉会重新创建,将可用的pod维持在指定的数量上. 滚动升级更新image或者修改pod配置,在升级过程中可以确保一定数量的pod">
+<meta name="keywords" content="k8s">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://kitrap.com/2018/12/06/hello-world/index.html">
+<meta property="og:title" content="kubernetes介绍">
+<meta property="og:url" content="http://kitrap.com/2019/03/14/intro-kubernetes/index.html">
 <meta property="og:site_name" content="游箫笔谈">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="虚拟化技术dockerkubernetes架构概念Deploymentdeployment用来创建管理pod,继承rc的全部特性的同时,增加了回滚等新功能,可以看作是rc的升级版.  pod高可用deployment可以创建多个pod,并对pod进行健康检查,如果pod挂掉会重新创建,将可用的pod维持在指定的数量上. 滚动升级更新image或者修改pod配置,在升级过程中可以确保一定数量的pod">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-06T10:12:56.007Z">
+<meta property="og:updated_time" content="2019-03-14T13:02:52.058Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="kubernetes介绍">
+<meta name="twitter:description" content="虚拟化技术dockerkubernetes架构概念Deploymentdeployment用来创建管理pod,继承rc的全部特性的同时,增加了回滚等新功能,可以看作是rc的升级版.  pod高可用deployment可以创建多个pod,并对pod进行健康检查,如果pod挂掉会重新创建,将可用的pod维持在指定的数量上. 滚动升级更新image或者修改pod配置,在升级过程中可以确保一定数量的pod">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://kitrap.com/2018/12/06/hello-world/"/>
+  <link rel="canonical" href="http://kitrap.com/2019/03/14/intro-kubernetes/"/>
 
 
 
 
 
-  <title>Hello World | 游箫笔谈</title>
+  <title>kubernetes介绍 | 游箫笔谈</title>
   
 
 
@@ -262,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kitrap.com/2018/12/06/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://kitrap.com/2019/03/14/intro-kubernetes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eric Lee">
@@ -279,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">kubernetes介绍</h1>
         
 
         <div class="post-meta">
@@ -291,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-06T18:12:56+08:00">
-                2018-12-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-14T21:02:52+08:00">
+                2019-03-14
               </time>
             
 
@@ -301,6 +302,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/kubernetes/" itemprop="url" rel="index">
+                    <span itemprop="name">kubernetes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -329,15 +352,23 @@
       
 
       
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1 id="虚拟化技术"><a href="#虚拟化技术" class="headerlink" title="虚拟化技术"></a>虚拟化技术</h1><h1 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h1><h1 id="kubernetes"><a href="#kubernetes" class="headerlink" title="kubernetes"></a>kubernetes</h1><h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><h3 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h3><p>deployment用来创建管理pod,继承rc的全部特性的同时,增加了回滚等新功能,可以看作是rc的升级版.</p>
+<ul>
+<li>pod高可用<br>deployment可以创建多个pod,并对pod进行健康检查,如果pod挂掉会重新创建,将可用的pod维持在指定的数量上.</li>
+<li>滚动升级<br>更新image或者修改pod配置,在升级过程中可以确保一定数量的pod是处于可用的,避免升级操作对服务产生影响.</li>
+<li>对pod扩容<br>增加/减少pod副本的数量,提供合理的服务能力.</li>
+<li>回滚<br>可以回退到之前的版本上.</li>
+<li>暂停/恢复<br>在处理deployment过程中,通过rollout pause暂停处理,此时可以进行deployment修改更新等操作,修改只有在执行完rollout resume之后才会生效.</li>
+</ul>
+<h3 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h3><p>由于pod可以动态创建和销毁,无法使用固定的ip访问pod,因此k8s将对pods的访问抽象成service.k8s提供四种访问pod的方式:</p>
+<ul>
+<li>ClusterIp<br>通过集群内部ip访问pod.ip是从service-cluster-ip-range指定的cidr里分配出来,各个node上会生成cluster ip到pod的转发规则.流量到Node上后,kube-proxy会将流量转给pod.</li>
+<li>NodePort<br>在Node上起个端口,通过NodeIp:NodePort可以访问本机上的pod.这种方式的缺点在于:NodeIp变化时,访问方也需要更新,另外一个NodePort只能对应一个service.</li>
+<li>LoadBalancer<br>可以在集群外访问pod.</li>
+<li>ExternalName<br>前三种方式都是将service映射到ip上,externalName将服务映射到域名上,这样可以通过域名解析将请求路由到pod.</li>
+</ul>
+<p>service访问方式是一种包含关系,创建NodePort类型会自动生成CluasterIp,创建LB/ExternalName会自动创建nodePort和clusterIp.</p>
+<p>以上四种类型的service是将service作为proxy或者loadbalance,将请求路由到后端的pod.k8s提供一种直接访问pod的service–Headless Service.配置文件配置clusterIP:None,这样创建service不会分配clusterIP,api会将pod的地址作为service的A记录,加到dns里.</p>
 
       
     </div>
@@ -377,6 +408,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/k8s/" rel="tag"># k8s</a>
+          
+        </div>
+      
 
       
       
@@ -386,15 +423,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/12/06/Docker-v和mount区别/" rel="next" title="Docker -v和mount区别">
+                <i class="fa fa-chevron-left"></i> Docker -v和mount区别
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/06/Docker-v和mount区别/" rel="prev" title="Docker -v和mount区别">
-                Docker -v和mount区别 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -552,7 +589,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#虚拟化技术"><span class="nav-number">1.</span> <span class="nav-text">虚拟化技术</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#docker"><span class="nav-number">2.</span> <span class="nav-text">docker</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#kubernetes"><span class="nav-number">3.</span> <span class="nav-text">kubernetes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#架构"><span class="nav-number">3.1.</span> <span class="nav-text">架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">3.2.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Deployment"><span class="nav-number">3.2.1.</span> <span class="nav-text">Deployment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Service"><span class="nav-number">3.2.2.</span> <span class="nav-text">Service</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
