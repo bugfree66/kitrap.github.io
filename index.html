@@ -368,7 +368,12 @@
 <li>ExternalName<br>前三种方式都是将service映射到ip上,externalName将服务映射到域名上,这样可以通过域名解析将请求路由到pod.</li>
 </ul>
 <p>service访问方式是一种包含关系,创建NodePort类型会自动生成CluasterIp,创建LB/ExternalName会自动创建nodePort和clusterIp.</p>
-<p>以上四种类型的service是将service作为proxy或者loadbalance,将请求路由到后端的pod.k8s提供一种直接访问pod的service–Headless Service.配置文件配置clusterIP:None,这样创建service不会分配clusterIP,api会将pod的地址作为service的A记录,加到dns里.</p>
+<p>以上四种类型的service是将service作为proxy或者loadbalance,将请求路由到后端的pod.k8s提供一种直接访问pod的service–Headless Service.配置文件配置clusterIP:None,这样创建service不会分配clusterIP,api会将pod的地址作为service的A记录,加到dns里.Headless Service可以用来通过hostname访问pod,以及配置StatefulSets使用.</p>
+<h3 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h3><p>k8s提供的DNS主要用于在集群内部通过名称访问pod或者service.</p>
+<ul>
+<li>services<br>提供通过A记录或者SRV记录访问service.<br>A记录访问格式为:my-svc.my-namespace.svc.cluster.local<br>SRV记录访问格式为:_my-port-name._my-port-protocol.my-svc.my-namespace.svc.cluster.local</li>
+<li>pods<br>A记录格式为:1-2-3-4.default.pod.cluster.local<br>这种方式必须事先知道pod的ip.很多时候我们不知道pod的ip才想通过域名获取ip,这种场景可以在创建pod时指定hostname和subdomain,通过<hostname>.<subdomain>.<namespace>.svc.cluster.local解析出pod ip.<br>dns配置支持三种策略:Default,ClusterFirst,ClusterFirstWithHostNet,None.<br>Default策略pod使用node的resolve.conf配置.<br>ClusterFirst策略使用k8s dns解析集群域名的,node上配置的nameserver解析非集群域名.<br>ClusterFirstWithHostNet策略与ClusterFirst基本一样,适用于pod使用了hostNetwork.<br>None策略忽略k8s的dns配置,使用pod spec里dnsConfig的配置.</namespace></subdomain></hostname></li>
+</ul>
 
           
         
