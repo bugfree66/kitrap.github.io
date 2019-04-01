@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="docker," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,14 @@
 
 
 
-<meta name="description" content="docker里往容器里挂载文件/文件夹有两种方法:  -v source:dest:ro这种方法既可以指定volume,也可以通过绝对路径指定宿主机的文件/文件夹 –mount type=bind/volume/tmpfs,source=…,target=…,readonly type=bind将Host的文件/文件夹挂载到容器,指定的路径在Host上必须存在,否则会报错误. type=volum">
-<meta name="keywords" content="docker">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Docker -v和mount区别">
-<meta property="og:url" content="http://kitrap.com/2018/12/06/Docker-v和mount区别/index.html">
+<meta property="og:title" content="python学习(一)">
+<meta property="og:url" content="http://kitrap.com/2019/04/01/python学习-一/index.html">
 <meta property="og:site_name" content="游箫笔谈">
-<meta property="og:description" content="docker里往容器里挂载文件/文件夹有两种方法:  -v source:dest:ro这种方法既可以指定volume,也可以通过绝对路径指定宿主机的文件/文件夹 –mount type=bind/volume/tmpfs,source=…,target=…,readonly type=bind将Host的文件/文件夹挂载到容器,指定的路径在Host上必须存在,否则会报错误. type=volum">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-06T12:30:59.388Z">
+<meta property="og:updated_time" content="2019-04-01T11:11:53.813Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Docker -v和mount区别">
-<meta name="twitter:description" content="docker里往容器里挂载文件/文件夹有两种方法:  -v source:dest:ro这种方法既可以指定volume,也可以通过绝对路径指定宿主机的文件/文件夹 –mount type=bind/volume/tmpfs,source=…,target=…,readonly type=bind将Host的文件/文件夹挂载到容器,指定的路径在Host上必须存在,否则会报错误. type=volum">
+<meta name="twitter:title" content="python学习(一)">
 
 
 
@@ -120,13 +116,13 @@
 
 
 
-  <link rel="canonical" href="http://kitrap.com/2018/12/06/Docker-v和mount区别/"/>
+  <link rel="canonical" href="http://kitrap.com/2019/04/01/python学习-一/"/>
 
 
 
 
 
-  <title>Docker -v和mount区别 | 游箫笔谈</title>
+  <title>python学习(一) | 游箫笔谈</title>
   
 
 
@@ -263,7 +259,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kitrap.com/2018/12/06/Docker-v和mount区别/">
+    <link itemprop="mainEntityOfPage" href="http://kitrap.com/2019/04/01/python学习-一/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eric Lee">
@@ -280,7 +276,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Docker -v和mount区别</h1>
+          <h1 class="post-title" itemprop="name headline">python学习(一)</h1>
         
 
         <div class="post-meta">
@@ -292,8 +288,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-06T20:15:31+08:00">
-                2018-12-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-01T19:11:53+08:00">
+                2019-04-01
               </time>
             
 
@@ -330,18 +326,7 @@
       
 
       
-        <p>docker里往容器里挂载文件/文件夹有两种方法:</p>
-<ol>
-<li>-v source:dest:ro<br>这种方法既可以指定volume,也可以通过绝对路径指定宿主机的文件/文件夹</li>
-<li>–mount type=bind/volume/tmpfs,source=…,target=…,readonly<ul>
-<li>type=bind<br>将Host的文件/文件夹挂载到容器,指定的路径在Host上必须存在,否则会报错误.</li>
-<li>type=volume<br>将docker管理的卷挂载到容器里,同样卷必须存在.卷的创建和查看通过命令:<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="keyword">volume</span><span class="bash"> create/ls</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ol>
-<p>两种方式的最大区别是:<br>-v/–volume会<strong>自动</strong>判断source的是卷还是本地文件/文件夹,然后采取相应的方式挂载.<br>另外需要注意的是:如果使用-v指定的路径不存在的话,会自动创建该路径,容器里的dest会复制到本地路径.<br>这位大神讲的一语道破真谛: <a href="https://github.com/moby/moby/issues/34532#issuecomment-322738970" target="_blank" rel="noopener">https://github.com/moby/moby/issues/34532#issuecomment-322738970</a></p>
-
+        
       
     </div>
     
@@ -380,12 +365,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/docker/" rel="tag"># docker</a>
-          
-        </div>
-      
 
       
       
@@ -395,15 +374,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/12/06/Docker-v和mount区别/" rel="next" title="Docker -v和mount区别">
+                <i class="fa fa-chevron-left"></i> Docker -v和mount区别
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/01/python学习-一/" rel="prev" title="python学习(一)">
-                python学习(一) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
