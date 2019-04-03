@@ -259,6 +259,125 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kitrap.com/2019/04/03/python学习-二/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eric Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="游箫笔谈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/03/python学习-二/" itemprop="url">python学习(二)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-03T20:30:21+08:00">
+                2019-04-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://kitrap.com/2019/04/01/python学习-一/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -330,7 +449,19 @@
       
         
           
-            
+            <h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><h2 id="anaconda环境配置"><a href="#anaconda环境配置" class="headerlink" title="anaconda环境配置"></a>anaconda环境配置</h2><p>anaconda提供了大量与数据分析相关的库包,非常适合数据,AI,机器学习相关人员.<br><a href="https://www.anaconda.com/distribution/" target="_blank" rel="noopener">下载地址</a></p>
+<h2 id="解释器"><a href="#解释器" class="headerlink" title="解释器"></a>解释器</h2><p>Python分几种:CPython,PyPy,Jython,IPython等.这些解析器实现方式各不相同,最常用的也是从官网下载下来的是CPython.<br>解析器运行有几种方式:</p>
+<ul>
+<li>交互式<br>像Linux命令行一样,从终端获取输入,执行,输出.</li>
+<li>直接执行<br>python -c cmd 直接执行命令.<br>python -m module 直接运行指定的模块.</li>
+</ul>
+<h1 id="Python初体验"><a href="#Python初体验" class="headerlink" title="Python初体验"></a>Python初体验</h1><h2 id="print-amp-amp-input"><a href="#print-amp-amp-input" class="headerlink" title="print &amp;&amp; input"></a>print &amp;&amp; input</h2><p>类似C语言中的scran和print一个例子:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; s = input(<span class="string">"please:"</span>)</span></span><br><span class="line">please:a</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; <span class="built_in">print</span>(s)</span></span><br><span class="line">a</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="Python基础"><a href="#Python基础" class="headerlink" title="Python基础"></a>Python基础</h1><h2 id="变量和命名规则"><a href="#变量和命名规则" class="headerlink" title="变量和命名规则"></a>变量和命名规则</h2><p>Python和其他的解释型语言一样,声明变量时无需指定类型,类型和值进行绑定.比如定义一个字典: d = {}.<br>变量分为全局变量和局部变量.在函数内部要使用全局变量需要使用global.<br>python命名规则和其他编程语言类似:</p>
+<ul>
+<li>变量由字母,数字,下划线组成,不能以字母开头.</li>
+<li>不能使用语言默认的关键字</li>
+</ul>
+<h2 id="注释方法"><a href="#注释方法" class="headerlink" title="注释方法"></a>注释方法</h2><h2 id="“-”的作用"><a href="#“-”的作用" class="headerlink" title="“:”的作用"></a>“:”的作用</h2><h2 id="dir-和help"><a href="#dir-和help" class="headerlink" title="dir()和help()"></a>dir()和help()</h2><h2 id="import"><a href="#import" class="headerlink" title="import"></a>import</h2><h2 id="pep8"><a href="#pep8" class="headerlink" title="pep8"></a>pep8</h2><h1 id="Python数值基本知识"><a href="#Python数值基本知识" class="headerlink" title="Python数值基本知识"></a>Python数值基本知识</h1><h2 id="数值类型-int-float-bool-e记法等"><a href="#数值类型-int-float-bool-e记法等" class="headerlink" title="数值类型,int,float,bool,e记法等"></a>数值类型,int,float,bool,e记法等</h2><h2 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h2><h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><h2 id="成员运算符"><a href="#成员运算符" class="headerlink" title="成员运算符"></a>成员运算符</h2><h2 id="身份运算符"><a href="#身份运算符" class="headerlink" title="身份运算符"></a>身份运算符</h2><h2 id="运算符优先"><a href="#运算符优先" class="headerlink" title="运算符优先"></a>运算符优先</h2>
           
         
       
@@ -543,7 +674,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -565,7 +696,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
