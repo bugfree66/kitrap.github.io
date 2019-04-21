@@ -259,6 +259,239 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kitrap.com/2019/04/21/scrapy处理流程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eric Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="游箫笔谈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/21/scrapy处理流程/" itemprop="url">scrapy处理流程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-21T21:33:00+08:00">
+                2019-04-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/scrapy/" itemprop="url" rel="index">
+                    <span itemprop="name">scrapy</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="函数调用流程"><a href="#函数调用流程" class="headerlink" title="函数调用流程"></a>函数调用流程</h1><ul>
+<li><p>engine.open_spider</p>
+<ul>
+<li><p>create scheduler</p>
+</li>
+<li><p>spidermw.process_start_requests</p>
+</li>
+<li><p>scheduler.open</p>
+</li>
+<li><p>scraper.open_spider</p>
+</li>
+<li><p>send signal spider_opened</p>
+</li>
+<li><p>nextcall.schedule    // 处理调度队列</p>
+<ul>
+<li><p>engine._next_request_from_scheduler</p>
+<ul>
+<li><p>scheduler.next_request    // 从调度队列里取request</p>
+</li>
+<li><p>engine._download</p>
+<ul>
+<li><p>downloader.fetch</p>
+<ul>
+<li><p>middleware.download</p>
+<ul>
+<li><p>process_request</p>
+</li>
+<li><p>download_func (downloader._enqueue_request)</p>
+<ul>
+<li><p>request入下载队列</p>
+</li>
+<li><p>downloader._process_queue    // 处理下载队列里的请求</p>
+</li>
+<li>downloader.handlers.download_request    // http/ftp等方式开始下载</li>
+</ul>
+</li>
+<li><p>process_response</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>nextcall.schedule    // 处理调度队列</p>
+</li>
+</ul>
+</li>
+<li><p>engine._handle_downloader_output</p>
+<ul>
+<li>isinstance(response, Request) : engine.crawl    // 继续爬</li>
+<li>scraper.enqueue_scrape    // 处理item<ul>
+<li>spidermw.scrape_response    // <ul>
+<li>process_spider_input</li>
+<li>scrape_func (request.callback or spider.parse)    // spider处理响应流程</li>
+<li>process_spider_output</li>
+</ul>
+</li>
+<li>scraper._process_spidermw_output<ul>
+<li>isinstance(output, Request): engine.crawl</li>
+<li>isinstance(output, (BaseItem, dict)): ITEM_PIPELINES process_item</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>engine.crawl</p>
+<ul>
+<li><p>engine.schedule</p>
+<ul>
+<li><p>send signal request_scheduled</p>
+</li>
+<li><p>scheduler.enqueue_request    // request入调度队列</p>
+</li>
+</ul>
+</li>
+<li><p>nextcall.schedule    // 处理调度队列</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>engine.start</p>
+<ul>
+<li>send signal engine_started</li>
+<li>closewait</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://kitrap.com/2019/04/03/python学习-二/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -681,7 +914,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -692,7 +925,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
@@ -703,7 +936,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
